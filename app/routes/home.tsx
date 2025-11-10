@@ -1,13 +1,7 @@
 import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
+import { redirect } from "react-router";
 
-export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
-  ];
-}
+export const loader: Route.Loader = () => redirect("/profile");
 
-export default function Home() {
-  return <Welcome />;
+export default function Home() { return null;
 }
